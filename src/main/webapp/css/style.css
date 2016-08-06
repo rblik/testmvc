@@ -1,0 +1,85 @@
+html {
+    background-color: cornsilk;
+}
+
+.pagelinks {
+    padding-left: 10px;
+}
+.pagelinks, .pagelinks a {
+    color: black;
+}
+
+.table {
+    padding-top: 5px;
+}
+
+.table tr a{
+    color: black;
+}
+
+#row {
+    color: black;
+    width: 100%;
+}
+
+#row thead th {
+    font-size: 18px;
+}
+
+.createReference {
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 175px;
+    float: left;
+}
+
+.content {
+    padding: 75px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS, fantasy;
+}
+
+.searchByName {
+    padding-top: 20px;
+    float: right;
+    width: 300px;
+}
+
+.pageRestrictions {
+    position: static;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#userName {
+    border-radius: 5px;
+    border-width: 0;
+    text-align: center;
+}
+
+.button {
+    height: 20px;
+    border-radius: 5px;
+    border-width: 0;
+}
+
+.form {
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.form tr {
+    height: 30px;
+}
+#formInputName, #formInputAge, #formInputNameEdit, #formInputAgeEdit {
+    border-radius: 5px;
+    border-width: 0;
+}
+.error {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS, fantasy;
+}
