@@ -24,6 +24,7 @@ public class UserDAO {
     @Autowired
     SessionFactory sessionFactory;
 
+    @SuppressWarnings(value = "unchecked")
     public List<User> getUsers() {
         return (List<User>) sessionFactory.getCurrentSession().createQuery("from User").list();
     }
@@ -50,6 +51,7 @@ public class UserDAO {
         return (User) sessionFactory.getCurrentSession().get(User.class, id);
     }
 
+    @SuppressWarnings(value = "unchecked")
     public List<User> findUsersByName(String userName) {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(User.class);

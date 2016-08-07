@@ -44,7 +44,7 @@ public class User {
     @Column(name = "name")
     @Size(min = 3, max = 10)
     @NotNull
-    @Pattern(regexp = "\\D*")
+    @Pattern(regexp = "\\p{L}*")
     public String getName() {
         return name;
     }
@@ -73,6 +73,7 @@ public class User {
         this.admin = admin;
     }
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "createdDate")
     public Date getCreatedDate() {
         return createdDate;
