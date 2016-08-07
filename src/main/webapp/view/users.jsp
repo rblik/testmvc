@@ -37,6 +37,11 @@
             <input class="button" type="submit" value="${buttonVar}" name="Search">
         </form>
     </div>
+    <div class="pageRestrictions">
+        <a href="${pageContext.request.contextPath}/users/5.html"><spring:message code="users.show.5"/></a>
+        <a href="${pageContext.request.contextPath}/users/10.html"><spring:message code="users.show.10"/></a>
+        <a href="${pageContext.request.contextPath}/users/0.html"><spring:message code="users.show.all"/></a>
+    </div>
     <div class="table">
         <display:table id="row" style="text-align:center" name="users" defaultsort="1"
                        requestURI="${pageContext.request.contextPath}"
@@ -60,11 +65,6 @@
                 </a>
             </display:column>
         </display:table>
-    </div>
-    <div class="pageRestrictions">
-        <a href="${pageContext.request.contextPath}/users/5.html"><spring:message code="users.show.5"/></a>
-        <a href="${pageContext.request.contextPath}/users/10.html"><spring:message code="users.show.10"/></a>
-        <a href="${pageContext.request.contextPath}/users/0.html"><spring:message code="users.show.all"/></a>
     </div>
 </div>
 </body>

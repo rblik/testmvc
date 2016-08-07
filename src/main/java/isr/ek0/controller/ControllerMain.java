@@ -23,6 +23,7 @@ public class ControllerMain {
     @Autowired
     private ServiceUser serviceUser;
 
+//    to user view
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public ModelAndView listUsers() {
                 ModelAndView modelAndView = new ModelAndView();
@@ -31,6 +32,7 @@ public class ControllerMain {
         return modelAndView;
     }
 
+//    to user view divided to pages
     @RequestMapping(value = "/users/{pages}", method = RequestMethod.GET)
     public ModelAndView listUsersRestricted(@PathVariable int pages, HttpServletRequest request) {
         request.getSession().setAttribute("pages", pages);
@@ -40,6 +42,7 @@ public class ControllerMain {
         return modelAndView;
     }
 
+//    search user
     @RequestMapping(value = "/users/search", method = RequestMethod.POST)
     public ModelAndView searchResultListUsers(@RequestParam("userName") String userName) {
         ModelAndView modelAndView = new ModelAndView();
@@ -48,12 +51,14 @@ public class ControllerMain {
         return modelAndView;
     }
 
+//    to create user form
     @RequestMapping(value = "/create/form", method = RequestMethod.GET)
     public String createUser(Model model) {
         model.addAttribute("user", new User());
         return "create";
     }
 
+//    submit creation of user
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView submitCreateUser(@Valid @ModelAttribute("user") User user, BindingResult result) throws UnsupportedEncodingException {
 
@@ -64,12 +69,14 @@ public class ControllerMain {
         return new ModelAndView("redirect:/users");
     }
 
+//    remove user
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String deleteUser(@RequestParam("id") Integer id) {
         serviceUser.deleteUser(id);
         return "redirect:/users";
     }
 
+//    to edit user form
     @RequestMapping(value = "/edit/form", method = RequestMethod.GET)
     public String editUser(@RequestParam("id") Integer id, Model model) {
         User user = serviceUser.getUserById(id);
@@ -77,6 +84,7 @@ public class ControllerMain {
         return "edit";
     }
 
+//    to submit edition of user
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public ModelAndView submitEditUser(@Valid @ModelAttribute("user") User user, BindingResult result) {
         if (result.hasErrors()) {
